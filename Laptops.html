@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laptops</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+background:#f5f5f5;
+margin:0;
+}
+
+/* Header */
+.header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:blueviolet;
+color:white;
+padding:15px 30px;
+}
+
+.header h1{
+margin:0;
+text-transform:uppercase;
+}
+
+/* Cart display */
+.cart{
+background:white;
+color:blueviolet;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+}
+
+/* Product layout */
+.products{
+width:90%;
+margin:auto;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+padding:30px 0;
+}
+
+/* Product card */
+figure{
+width:220px;
+background:white;
+border-radius:10px;
+padding:15px;
+text-align:center;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+figure:hover{
+transform:scale(1.05);
+box-shadow:0 4px 15px rgba(0,0,0,0.2);
+}
+
+img{
+width:180px;
+height:140px;
+}
+
+figcaption{
+font-size:16px;
+font-weight:bold;
+margin-top:10px;
+}
+
+.price{
+color:green;
+display:block;
+margin:6px 0;
+}
+
+button{
+background:blueviolet;
+color:white;
+border:none;
+padding:8px 12px;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:purple;
+}
+
+/* Clear button */
+.clear{
+display:block;
+margin:20px auto;
+padding:10px 15px;
+background:red;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+.back{
+display:block;
+text-align:center;
+margin:30px;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+<h1>Laptops</h1>
+
+<div class="cart">
+Items: <span id="cart-count">0</span> |
+Total: ₹<span id="cart-total">0</span>
+</div>
+
+</div>
+
+<div class="products">
+
+<figure>
+<img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcThWy8cacquwSY699HjMr6QB3pUU_YeBf_RJLJrTUefDjD8-MwIquUm1xHY0ucDbfWckQ3bRQ67y9i7NoFpeY1CGR3suF6I">
+<figcaption>
+Apple MacBook Pro M3
+<span class="price">₹130000</span>
+<button onclick="addToCart(130000)">Add to Cart</button>
+</figcaption>
+</figure>
+
+<figure>
+<img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ4HdQ556my2RL6q5yrmThLflBz-S59pfhrR_eaGtOhHLKpHKVbu9DnlzyvxAnaPcOuCvoiEoUP8soCcBF7kpbRo8VR3b3jxnvfSd32ev4rBpI_ss3TM06d5g">
+<figcaption>
+Lenovo LOQ Gaming Laptop
+<span class="price">₹72000</span>
+<button onclick="addToCart(72000)">Add to Cart</button>
+</figcaption>
+</figure>
+
+<figure>
+<img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTBR3yzSQJOu3489mIS6RWiefW-0EF2UzC_kpFyvInoYlIs3IllL5JxJQNgEsmNJ_AvPyHlbob9U7N6ERjJ9iJ5hFW9bSckHgpyndg23c11UeheeJLYkvL5">
+<figcaption>
+HP 14 Intel Core i3
+<span class="price">₹39999</span>
+<button onclick="addToCart(39999)">Add to Cart</button>
+</figcaption>
+</figure>
+
+<figure>
+<img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTMlHirQcugo_Jb_75vym6eMK_Bz6vigzaG88qHNGKn8Md7Cz1rgD3TFuGaK7zxLgp5TBUds-eeHbilhq4dK7QJCf-yr99g8rzBddBYkhB-48g228uawepQc1za1jXGMs0_vqqRIYA">
+<figcaption>
+Galaxy Book4
+<span class="price">₹69999</span>
+<button onclick="addToCart(69999)">Add to Cart</button>
+</figcaption>
+</figure>
+
+<figure>
+<img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ4HdQ556my2RL6q5yrmThLflBz-S59pfhrR_eaGtOhHLKpHKVbu9DnlzyvxAnaPcOuCvoiEoUP8soCcBF7kpbRo8VR3b3jxnvfSd32ev4rBpI_ss3TM06d5g">
+<figcaption>
+Lenovo IdeaPad
+<span class="price">₹56999</span>
+<button onclick="addToCart(56999)">Add to Cart</button>
+</figcaption>
+</figure>
+
+<figure>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRj">
+<figcaption>
+Acer Nitro Gaming Laptop
+<span class="price">₹84999</span>
+<button onclick="addToCart(84999)">Add to Cart</button>
+</figcaption>
+</figure>
+
+</div>
+
+<button class="clear" onclick="clearCart()">Clear Cart</button>
+
+<a href="register.html" class="back">Back To Home</a>
+
+<script>
+
+/* Load saved cart */
+
+let cartCount = localStorage.getItem("cartCount") || 0;
+let cartTotal = localStorage.getItem("cartTotal") || 0;
+
+document.getElementById("cart-count").innerText = cartCount;
+document.getElementById("cart-total").innerText = cartTotal;
+
+/* Add to cart */
+
+function addToCart(price){
+
+cartCount++;
+cartTotal = parseInt(cartTotal) + price;
+
+localStorage.setItem("cartCount", cartCount);
+localStorage.setItem("cartTotal", cartTotal);
+
+document.getElementById("cart-count").innerText = cartCount;
+document.getElementById("cart-total").innerText = cartTotal;
+
+}
+
+/* Clear cart */
+
+function clearCart(){
+
+localStorage.clear();
+
+cartCount = 0;
+cartTotal = 0;
+
+document.getElementById("cart-count").innerText = 0;
+document.getElementById("cart-total").innerText = 0;
+
+}
+
+</script>
+
+</body>
+</html>

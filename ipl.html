@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <style>
+        body{
+           background-image: url("https://cdn.pixabay.com/photo/2018/03/06/08/31/drone-3202860_640.jpg");
+           background-repeat: no-repeat;
+           background-size: cover;
+           font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        .form
+        {           
+           background-color:rgba(0,0,0,0.5);
+           width:500px;
+           margin:250px auto;
+           color:white;
+           padding:10px 20px 30px;
+           font-size: 20px;
+           border-radius: 15px;
+           
+        }
+
+        .form .tlabel{
+            display:block;
+        }
+        .tlabel input{
+            width:100%;
+            font-size: 1.2em;
+            border:2px solid cornflowerblue;
+            border-radius: 10px;
+            padding: 10px 10px;
+            box-sizing:border-box;
+            margin:15px 0px 15px;
+        }
+        input:focus{
+            background-color: antiquewhite;
+        }
+    
+
+        button{
+            background-color: burlywood;
+            padding: 20px;
+            font-size: 20px;
+            border-radius:10px;
+            box-shadow:10px 10px 20px red;
+        }
+        .radio input{
+            accent-color:yellow;
+            transform:scale(1.5);
+            
+        }
+        h2{text-align: center;
+        color:chartreuse;}
+
+
+    </style>
+</head>
+<body>
+<div class="form">
+    <form action="register.html" method="GET">
+        <h2>Sign Up</h2>
+        <div class="tlabel">
+        <label  for="username">USER NAME</label>
+        <input type="text" name="username" id="username" maxlength="10" required>        
+        </div>
+        <br>
+
+        <div class="tlabel">
+        <label for="password">PASSWORD</label>
+        <input type="password" name="password" id="password" required minlength="8">        
+        </div>
+        <br>
+        
+        <div class="radio">
+          <label>USER LOCATION</label>  
+         <input type="radio" name="location" id="India" value="India"> 
+         <label for="India">India</label>  
+         <input type="radio" name="location" id="Others" value="Others"> 
+         <label for="Others">Others</label>    
+        </div>
+        <br>
+        <div class="button">
+        <button type="submit">Sign Up</button>
+        <button type="reset">Reset</button>  
+        </div>      
+    </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Appliances</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+background:#f5f5f5;
+margin:0;
+}
+
+/* Header */
+.header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:blueviolet;
+color:white;
+padding:15px 30px;
+}
+
+.header h1{
+margin:0;
+text-transform:uppercase;
+}
+
+/* Cart display */
+.cart{
+background:white;
+color:blueviolet;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+}
+
+/* Product grid */
+.products{
+width:90%;
+margin:30px auto;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+/* Product card */
+figure{
+width:220px;
+background:white;
+border-radius:10px;
+padding:15px;
+text-align:center;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+figure:hover{
+transform:scale(1.05);
+box-shadow:0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Image */
+img{
+width:200px;
+height:200px;
+}
+
+/* Caption */
+figcaption{
+font-size:16px;
+font-weight:bold;
+margin-top:10px;
+}
+
+/* Price */
+.price{
+color:green;
+display:block;
+margin:5px 0;
+}
+
+/* Button */
+button{
+background:blueviolet;
+color:white;
+border:none;
+padding:8px 12px;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:purple;
+}
+
+/* Clear cart button */
+.clear{
+display:block;
+margin:20px auto;
+padding:10px 15px;
+background:red;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+/* Back link */
+.back{
+display:block;
+text-align:center;
+margin:30px;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+<h1>Home Appliances</h1>
+
+<div class="cart">
+Items: <span id="cart-count">0</span> |
+Total: ₹<span id="cart-total">0</span>
+</div>
+
+</div>
+
+<div class="products">
+
+<figure>
+<img src="https://m.media-amazon.com/images/I/61arz2nJBbL._AC_UF894,1000_QL80_.jpg">
+<figcaption>
+Bajaj Mixer Grinder
+<span class="price">₹3799</span>
+<button onclick="addToCart(3799)">Add to Cart</button>
+</figcaption>
+</figure>
+
+<figure>
+<img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSLLmh5taoVjVqwC9TBCWFu0D5OiTjZvC1MQ-oew5c4lVR_XgiQX6GGjECss3FxDCB136nJcubmFH9bomU7LouLvyio6kKAjI2zOC1ZqXb-29SVXboeH8VekA">
+<figcaption>
+Philips Air Fryer
+<span class="price">₹4345</span>
+<button onclick="addToCart(4345)">Add to Cart</button>
+</figcaption>
+</figure>
+
+<figure>
+<img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSHh4vc9VqgVeyLdSxSdQ4SfXqpnoZK4p2wrAHdDQVj60KU2rIi_RQeeHl6LDTXNqPMtKxeW7YThkYUHkDx_hxk5VIl1byST5EdPMXCbLzdtLD-dqMP9P4H3P0">
+<figcaption>
+4 Burner Gas Stove
+<span class="price">₹17499</span>
+<button onclick="addToCart(17499)">Add to Cart</button>
+</figcaption>
+</figure>
+
+<figure>
+<img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTP4XjbI13f8kJ6VJVuzycNOA6hecxI0OzNtNvggBxGDu7hckAAFBHKgEXXxVKSyE1kxPdBbnqkY7A8u9jGETVMXRfwjN0">
+<figcaption>
+Samsung Refrigerator
+<span class="price">₹72499</span>
+<button onclick="addToCart(72499)">Add to Cart</button>
+</figcaption>
+</figure>
+
+<figure>
+<img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTMlHirQcugo_Jb_75vym6eMK_Bz6vigzaG88qHNGKn8Md7Cz1rgD3TFuGaK7zxLgp5TBUds-eeHbilhq4dK7QJCf-yr99g8rzBddBYkhB-48g228uawepQc1za1jXGMs0_vqqRIYA">
+<figcaption>
+Samsung Washing Machine
+<span class="price">₹45000</span>
+<button onclick="addToCart(45000)">Add to Cart</button>
+</figcaption>
+</figure>
+
+<figure>
+<img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcT7fGMuWIBJD1myWzATCetkuxwhD_94SESsoQpYF2sg34cYIu_CmhDI0O3Ftvt1uluHMmHw4dYoas3iDtzou2WJ-oUyE3fimrL49A1rIk0KqGUh--6VPtVGmKcWjkABJbz6gntpivs&usqp=CAc">
+<figcaption>
+Aquaguard Water Filter
+<span class="price">₹6999</span>
+<button onclick="addToCart(6999)">Add to Cart</button>
+</figcaption>
+</figure>
+
+</div>
+
+<button class="clear" onclick="clearCart()">Clear Cart</button>
+
+<a href="register.html" class="back">Back To Home</a>
+
+<script>
+
+/* Load existing cart */
+
+let cartCount = localStorage.getItem("cartCount") || 0;
+let cartTotal = localStorage.getItem("cartTotal") || 0;
+
+document.getElementById("cart-count").innerText = cartCount;
+document.getElementById("cart-total").innerText = cartTotal;
+
+/* Add to cart */
+
+function addToCart(price){
+
+cartCount++;
+cartTotal = parseInt(cartTotal) + price;
+
+localStorage.setItem("cartCount", cartCount);
+localStorage.setItem("cartTotal", cartTotal);
+
+document.getElementById("cart-count").innerText = cartCount;
+document.getElementById("cart-total").innerText = cartTotal;
+
+}
+
+/* Clear cart */
+
+function clearCart(){
+
+localStorage.clear();
+
+cartCount = 0;
+cartTotal = 0;
+
+document.getElementById("cart-count").innerText = 0;
+document.getElementById("cart-total").innerText = 0;
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile Phones</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+background:#f5f5f5;
+margin:0;
+}
+
+/* Header */
+.header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:blueviolet;
+color:white;
+padding:15px 30px;
+}
+
+.header h1{
+margin:0;
+}
+
+/* Cart display */
+.cart{
+background:white;
+color:blueviolet;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+}
+
+/* Product layout */
+.products{
+width:90%;
+margin:auto;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+padding:30px 0;
+}
+
+/* Product card */
+figure{
+width:220px;
+background:white;
+border-radius:10px;
+padding:15px;
+text-align:center;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+figure:hover{
+transform:scale(1.05);
+box-shadow:0 4px 15px rgba(0,0,0,0.2);
+}
+
+img{
+width:180px;
+height:180px;
+}
+
+figcaption{
+font-size:16px;
+font-weight:bold;
+margin-top:10px;
+}
+
+.price{
+color:green;
+display:block;
+margin:6px 0;
+}
+
+button{
+background:blueviolet;
+color:white;
+border:none;
+padding:8px 12px;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:purple;
+}
+
+.clear{
+display:block;
+margin:20px auto;
+padding:10px 15px;
+}
+
+.back{
+display:block;
+text-align:center;
+margin:30px;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+<h1>Mobile Phones</h1>
+
+<div class="cart">
+Items: <span id="cart-count">0</span> |
+Total: ₹<span id="cart-total">0</span>
+</div>
+
+</div>
+
+<div class="products">
+
+<figure>
+<img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRHiR_QuYDbFWsEc05uFvkn5BaT4bjOi2n4xZMmKda3V8E3vCFmNC4E8V7LyeBAgY4vWklnTRwR6wV94ymOme1Nm213JdVMYcLKNUxSvKSThxltfjrnGa94UQ">
+<figcaption>
+Oppo Reno 15
+<span class="price">₹45000</span>
+<button onclick="addToCart(45000)">Add to Cart</button>
+</figcaption>
+</figure>
+
+<figure>
+<img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSL1I6PgMWycAJv0MoCU_DzWXgXRL5EAeWiW9_yS1H5HE-jXzRI3zIJ9NGamQ7N8tmp_YnupTHMQXtRkRzRECMSBoSV3Ymatz5o-wzIyylzRFUuTHDlmG1_Pg">
+<figcaption>
+Samsung Galaxy
+<span class="price">₹47999</span>
+<button onclick="addToCart(47999)">Add to Cart</button>
+</figcaption>
+</figure>
+
+<figure>
+<img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTe1-4R3wW3tKAXjYvftWBmLhKjbPe0rEhuMVNV4nPzwU0czCOtFCHu572-v2mYER4NuPd6C-BZm5kYpxOOFnDskk3HZSq28g">
+<figcaption>
+OnePlus Nord CE4
+<span class="price">₹21999</span>
+<button onclick="addToCart(21999)">Add to Cart</button>
+</figcaption>
+</figure>
+
+<figure>
+<img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQcg3eLSbtbVubBYN8WKPUIrZyIP954A5zW5vmap5BqVcu6wTNGugHnRi30PXhtI4Lufpk3X5CkBNMnjJYl_MS3fewhCsREuza9yj4k5sKD8PLIQlHWYXcSFntoIAQIhUM0PM2coXBt">
+<figcaption>
+iPhone 17 Pro
+<span class="price">₹134500</span>
+<button onclick="addToCart(134500)">Add to Cart</button>
+</figcaption>
+</figure>
+
+<figure>
+<img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTiY8aOypp5rm2WrDPSrjkn2rY-BIgF3nRJ59j0hD_Ktvfxrvu7kKXKKEO2uCdIFp5SygI5pBZeWbT77gT-SrRSg0DVx8XkUfzOXzzUCjbTjlrglHj1tCYXHzBxhDOWVeTQpJcVmFLPm_g">
+<figcaption>
+Google Pixel 9a
+<span class="price">₹39900</span>
+<button onclick="addToCart(39900)">Add to Cart</button>
+</figcaption>
+</figure>
+
+<figure>
+<img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTPuIR4z6IViRR5YDKN85pZuMhPx0wHOZZNCad_mRrAkWucj0jyyIvfHTKMtRQcEvJHLcKT_kM8S08p45SQj-Ip5y6vu2hbBkzKS8_vxhzh&usqp=CAc">
+<figcaption>
+Edge 60 Fusion
+<span class="price">₹22499</span>
+<button onclick="addToCart(22499)">Add to Cart</button>
+</figcaption>
+</figure>
+
+</div>
+
+<button class="clear" onclick="clearCart()">Clear Cart</button>
+
+<a href="register.html" class="back">Back To Home</a>
+
+<script>
+
+/* Load existing cart */
+
+let cartCount = localStorage.getItem("cartCount") || 0;
+let cartTotal = localStorage.getItem("cartTotal") || 0;
+
+document.getElementById("cart-count").innerText = cartCount;
+document.getElementById("cart-total").innerText = cartTotal;
+
+/* Add item */
+
+function addToCart(price){
+
+cartCount++;
+cartTotal = parseInt(cartTotal) + price;
+
+localStorage.setItem("cartCount", cartCount);
+localStorage.setItem("cartTotal", cartTotal);
+
+document.getElementById("cart-count").innerText = cartCount;
+document.getElementById("cart-total").innerText = cartTotal;
+
+}
+
+/* Clear cart */
+
+function clearCart(){
+
+localStorage.clear();
+
+cartCount = 0;
+cartTotal = 0;
+
+document.getElementById("cart-count").innerText = 0;
+document.getElementById("cart-total").innerText = 0;
+
+}
+
+</script>
+
+</body>
+</html>

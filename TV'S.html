@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TV'S</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+background:#f5f5f5;
+margin:0;
+}
+
+.header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:blueviolet;
+color:white;
+padding:15px 30px;
+}
+
+.header h1{
+margin:0;
+text-transform:uppercase;
+}
+
+
+.cart{
+background:white;
+color:blueviolet;
+padding:8px 15px;
+border-radius:20px;
+font-weight:bold;
+}
+
+
+.products{
+width:90%;
+margin:auto;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+padding:30px 0;
+}
+
+
+figure{
+width:220px;
+background:white;
+border-radius:10px;
+padding:15px;
+text-align:center;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+figure:hover{
+transform:scale(1.05);
+box-shadow:0 4px 15px rgba(0,0,0,0.2);
+}
+
+img{
+width:200px;
+height:180px;
+}
+
+figcaption{
+font-size:16px;
+font-weight:bold;
+margin-top:10px;
+}
+
+.price{
+color:green;
+display:block;
+margin:6px 0;
+}
+
+button{
+background:blueviolet;
+color:white;
+border:none;
+padding:8px 12px;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:purple;
+}
+
+
+.clear{
+display:block;
+margin:20px auto;
+padding:10px 15px;
+background:red;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+.back{
+display:block;
+text-align:center;
+margin:30px;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+<h1>TV'S</h1>
+
+<div class="cart">
+Items: <span id="cart-count">0</span> |
+Total: ₹<span id="cart-total">0</span>
+</div>
+
+</div>
+
+<div class="products">
+
+<figure>
+<img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQB3cXu9EIyZJIQGjLwTVBrHeb8BWTAGcTY6KmSL5UctBWHhXAK32YVUCRXP9yEkcsGvfGOfc6eLaulyjzfTLKQ3iGOAsIbnPR0DcQmwYgBJ3fOkYMXAtE9RQ">
+<figcaption>
+Samsung OLED 4K Smart TV
+<span class="price">₹200000</span>
+<button onclick="addToCart(200000)">Add to Cart</button>
+</figcaption>
+</figure>
+
+<figure>
+<img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQWhJo2aLMcyH2spLF7AItjYn1XC8ehsMPukXcYuyUttrIO8WxtljDQO2bOON0AoUN9iHTflwSB1L1u5087Vrj2k2dzgUsg16ZJPXt56lfJuIVW9r5AFzGBNw">
+<figcaption>
+Sony BRAVIA 4K Smart TV
+<span class="price">₹43599</span>
+<button onclick="addToCart(43599)">Add to Cart</button>
+</figcaption>
+</figure>
+
+<figure>
+<img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSsA5n9zCEwcWrZ6zgjgT1u4KwUK7Qu4otr40m8PfwMaxLFgHiiCkLzKWnXCoH089W1HxrVAxpsrQ3Evf58WwGD4vCHs6DnoQ">
+<figcaption>
+Realme 32 Smart LED TV
+<span class="price">₹9999</span>
+<button onclick="addToCart(9999)">Add to Cart</button>
+</figcaption>
+</figure>
+
+<figure>
+<img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQzAJM1sM3Ubu7noOVJYhCIzp63FRvBxadbW1K5z2d87km3tape978gDh3D_dbkaMWT_UX55nhnIrmGxkzdnxYA63pTk7oetes87TlN3M-1CmJ6i8Y72ug3F2KZ26mo2YFqVEW2Q5DHXA">
+<figcaption>
+LG 50 Inch Smart TV
+<span class="price">₹36589</span>
+<button onclick="addToCart(36589)">Add to Cart</button>
+</figcaption>
+</figure>
+
+<figure>
+<img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRKLOeu0aBDb8bsgAjrOJzmKtLOQmWz1_kYq3CghRbxymqHzriR5T0nVTockC8MlncGoZXxgqlqRlvE0kahXFVF-cSASwRHQHg_jByjbSRLIi4FWGpYFhONBRmjGcA7YMilbKaorQsG-5c">
+<figcaption>
+Samsung 55 Inch Smart TV
+<span class="price">₹79890</span>
+<button onclick="addToCart(79890)">Add to Cart</button>
+</figcaption>
+</figure>
+
+<figure>
+<img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSA4NIfqy5gt5wHUH5s8z3chB-LhLkV1SEpjMAZWn1ruGYBNxsn9FWwu81QLHvtlcjKoFIYQEfbfzKrx7BYCNhkBiR0HOHCH66c9VQVPf2GqpXTINaHlmPkq6EWQjSGUeLgT-Jz6FNsbA">
+<figcaption>
+Haier 55 Inch Smart TV
+<span class="price">₹46500</span>
+<button onclick="addToCart(46500)">Add to Cart</button>
+</figcaption>
+</figure>
+
+</div>
+
+<button class="clear" onclick="clearCart()">Clear Cart</button>
+
+<a href="register.html" class="back">Back To Home</a>
+
+<script>
+
+
+let cartCount = parseInt(localStorage.getItem("cartCount") || 0);
+let cartTotal = parseInt(localStorage.getItem("cartTotal") || 0);
+
+document.getElementById("cart-count").innerText = cartCount;
+document.getElementById("cart-total").innerText = cartTotal;
+
+function addToCart(price){
+
+cartCount++;
+cartTotal = parseInt(cartTotal) + price;
+
+localStorage.setItem("cartCount", cartCount);
+localStorage.setItem("cartTotal", cartTotal);
+
+document.getElementById("cart-count").innerText = cartCount;
+document.getElementById("cart-total").innerText = cartTotal;
+
+}
+
+
+
+function clearCart(){
+
+localStorage.clear();
+
+cartCount = 0;
+cartTotal = 0;
+
+document.getElementById("cart-count").innerText = 0;
+document.getElementById("cart-total").innerText = 0;
+
+}
+
+</script>
+
+</body>
+</html>
